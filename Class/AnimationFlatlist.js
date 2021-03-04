@@ -18,32 +18,54 @@ constructor(props) {
  render()
  {
   
-  const {scrollX} = this.state
-  const inputRange = [(0),(this.props.width)]
+  const backColorSize = width-(width / 3)
+   const { scrollX } = this.state
+  
+  const inputRange = [0,backColorSize,backColorSize*2]
  const translateX = this.state.scrollX.interpolate({
   inputRange,
-   outputRange:[0,-width]
+   outputRange: [0, -backColorSize,-backColorSize],
  })
 
- const backgroundColor = this.state.scrollX.interpolate({
+ const textOpacity = this.state.scrollX.interpolate({
   inputRange,
-  outputRange:['#fff','#000']
+  outputRange:[1,0,0]
  })
+   
+   const textTwoOpacity = this.state.scrollX.interpolate({
+  inputRange,
+  outputRange:[0,1,1]
+ })
+   
 
   return (
     <SafeAreaView style={[styles.container,{backgroundColor:this.props.secondaryBackgroundColor}]}>
-      <Animated.View style = {{position:'absolute',top:0,left:0,bottom:0,right:width/3,backgroundColor:this.props.primaryBackgroundColor,
-                      transform:[{translateX:translateX}]}}/>
+      
+      <Animated.View style={{
+        position: 'absolute', top: 0, left: 0, bottom: 0,
+        flexDirection:'row',
+      transform: [{ translateX: translateX }]
+      }}>
+        <View style={{ height: '100%', width: backColorSize, backgroundColor: this.props.primaryBackgroundColor }} />
+        <View style={{height:'100%',width:backColorSize, backgroundColor: '#fff'}}/>
+      </Animated.View>
+     
+      
+      <View style={{ marginTop: 60, marginLeft: 60 }}>
+        <View style={{position:'absolute'}}>
+       <Animated.Text style={{ color: 'rgb(137,133,133)',opacity:textTwoOpacity, fontSize: 16 }}>{this.props.title}</Animated.Text>
+          <Animated.Text style={{ color: '#000',opacity:textTwoOpacity, marginTop: 20, width: 200, fontWeight: 'bold', fontSize: 30 }}>{this.props.subTitle}</Animated.Text>
+          </View>
+        <View>
+       <Animated.Text style={{ color: 'rgb(175,137,250)',opacity:textOpacity, fontSize: 16 }}>{this.props.title}</Animated.Text>
+        <Animated.Text style={{ color: '#fff',opacity:textOpacity, marginTop: 20, width: 200, fontWeight: 'bold', fontSize: 30 }}>{this.props.subTitle}</Animated.Text>
+        </View>
+      </View>
 
-      <View style = {{marginTop:60,marginLeft:60}}>
-       <Animated.Text style = {{color:backgroundColor,fontWeight:'bold',fontSize:16}}>{this.props.title}</Animated.Text>
-       <Animated.Text style = {{color:backgroundColor,marginTop:20,width:200, fontWeight:'bold',fontSize:30}}>{this.props.subTitle}</Animated.Text>
-
-       </View>
       <Animated.FlatList 
       horizontal
       data = {this.props.data}
-      keyExtractor = {(item,index)=> item.name+index}
+      keyExtractor = {(item,index)=> item.title+index}
       scrollEventThrottle={16}
       showsHorizontalScrollIndicator={false}
       bounces={false}
@@ -53,7 +75,7 @@ constructor(props) {
       onScroll={Animated.event(
         [{nativeEvent:{contentOffset:{x:scrollX}}}],
         {
-          useNativeDriver:false
+          useNativeDriver:true
         }
       )}
       />
@@ -63,7 +85,7 @@ constructor(props) {
 
 renderItem = ({item,index}) =>
 {
-  console.log(this.state.scrollX);
+  console.log('Value',this.state.scrollX);
   var ITEM_SIZE = this.props.width
   let translateY = this.state.scrollX.interpolate({
     inputRange:[(index-1)*ITEM_SIZE,
@@ -79,13 +101,12 @@ renderItem = ({item,index}) =>
   })
 
   return (
-    <Animated.View key={index+1+'ll'} style = {{marginLeft:(index==0 ? (width-ITEM_SIZE)/2 : 0),marginRight:(index == this.props.data.length-1 ? (width-ITEM_SIZE)/2 : 0) , marginHorizontal :10,height:this.props.height, borderRadius:8,overflow:'hidden', alignSelf:'center',width:ITEM_SIZE,transform:[{scaleX:translateY},{scaleY:translateY}],
-    overflow:'hidden'}}>
-      <Animated.View style = {{flex:1,backgroundColor:'#eeeeee', transform:[{translateX :changeImageX}]}}>    
-       <ImageBackground resizeMode={'center'} style = {{flex:1,width:'100%',borderRadius:6}} source = {require('./../assets/placeholder.png')}>
+    <Animated.View key={item.title + `${index+1}`} style = {{marginLeft:(index==0 ? (width-ITEM_SIZE)/2 : 0),marginRight:(index == this.props.data.length-1 ? (width-ITEM_SIZE)/2 : 0) , marginHorizontal :10,height:this.props.height, borderRadius:8,overflow:'hidden', alignSelf:'center',width:ITEM_SIZE,transform:[{scaleX:translateY},{scaleY:translateY}],
+      overflow: 'hidden'
+    }}>
+      <Animated.View style = {{flex:1,backgroundColor:'rgb(255, 250, 250)',borderRadius:6, transform:[{translateX :changeImageX}]}}>    
 
-    <Animated.Image style = {{ flex:1,width:'100%',borderRadius:6}} source = {{uri:item.image}}/>
-    </ImageBackground>
+    <Animated.Image style = {{ flex:1,width:'100%',borderRadius:6}} source = {item.image}/>
     </Animated.View>
     <View style = {{position:'absolute',bottom:20,justifyContent:'center', right:0,left:0,paddingHorizontal:30, height:120}}>
     <Text style = {{color:'#fff',fontSize:16,fontWeight:'bold'}}>{item.subTitle}</Text>
