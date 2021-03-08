@@ -19,6 +19,9 @@
 		36A9E206BA880F6F647DA4DF /* libPods-AnimationFlatlist-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD025B0F9E09AF38E06C4251 /* libPods-AnimationFlatlist-tvOS.a */; };
 		56753579FFA4D092D83E7B08 /* libPods-AnimationFlatlist-AnimationFlatlistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950062087DD36C656D9F7016 /* libPods-AnimationFlatlist-AnimationFlatlistTests.a */; };
 		76BD15F5DF2480EB359A80E5 /* libPods-AnimationFlatlist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C41B155B2CCABB451D92AB /* libPods-AnimationFlatlist.a */; };
+		7890033B25F3BA95008EC06D /* MilkyMatcha.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7890033A25F3BA95008EC06D /* MilkyMatcha.otf */; };
+		78CEA92B25F3E922008BF800 /* Frunch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78CEA92A25F3E922008BF800 /* Frunch.ttf */; };
+		78CEA92D25F3EB2E008BF800 /* Milky Matcha.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78CEA92C25F3EB2E008BF800 /* Milky Matcha.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		6FF66335D86643CB9AA2707E /* libPods-AnimationFlatlist-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnimationFlatlist-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A16B85DC0B5049577E2D71 /* Pods-AnimationFlatlist-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationFlatlist-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-AnimationFlatlist-tvOSTests/Pods-AnimationFlatlist-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		75D7563EDCF6FADA31F7D4B4 /* Pods-AnimationFlatlist-AnimationFlatlistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationFlatlist-AnimationFlatlistTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimationFlatlist-AnimationFlatlistTests/Pods-AnimationFlatlist-AnimationFlatlistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7890033A25F3BA95008EC06D /* MilkyMatcha.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MilkyMatcha.otf; sourceTree = "<group>"; };
+		78CEA92A25F3E922008BF800 /* Frunch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Frunch.ttf; sourceTree = "<group>"; };
+		78CEA92C25F3EB2E008BF800 /* Milky Matcha.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Milky Matcha.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AnimationFlatlist/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		950062087DD36C656D9F7016 /* libPods-AnimationFlatlist-AnimationFlatlistTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnimationFlatlist-AnimationFlatlistTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD025B0F9E09AF38E06C4251 /* libPods-AnimationFlatlist-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnimationFlatlist-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +131,9 @@
 		13B07FAE1A68108700A75B9A /* AnimationFlatlist */ = {
 			isa = PBXGroup;
 			children = (
+				78CEA92A25F3E922008BF800 /* Frunch.ttf */,
+				78CEA92C25F3EB2E008BF800 /* Milky Matcha.otf */,
+				7890033A25F3BA95008EC06D /* MilkyMatcha.otf */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -161,7 +170,6 @@
 				F9ED23088574EAB67E575724 /* Pods-AnimationFlatlist-tvOSTests.debug.xcconfig */,
 				73A16B85DC0B5049577E2D71 /* Pods-AnimationFlatlist-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -340,7 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CEA92D25F3EB2E008BF800 /* Milky Matcha.otf in Resources */,
+				78CEA92B25F3E922008BF800 /* Frunch.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				7890033B25F3BA95008EC06D /* MilkyMatcha.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
