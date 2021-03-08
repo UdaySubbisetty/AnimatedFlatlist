@@ -13,7 +13,7 @@ SVG-Animation
 
 |e.g. IOS Example|
 |:---:|
-|<img src="./WomensDay_new.mov" alt="WomensDay_new.mov" width="200px" />|
+|<img src="./womensday.gif" alt="WomensDay_new.gif" width="200px" />|
 
 
 
